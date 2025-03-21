@@ -41,7 +41,7 @@ const SuccessOverlay = ({ isVisible, onClose, onNewGame }) => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6 }}
             >
-              Congratulations! You've successfully solved the puzzle.
+              Congratulations! You&apos;ve successfully solved the puzzle.
             </motion.p>
 
             <motion.div
