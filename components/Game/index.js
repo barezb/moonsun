@@ -31,6 +31,26 @@ const Game = () => {
     generateNewPuzzle();
   }, [boardSize, difficulty]);
 
+  // Add effect to detect and handle game completion with a delay
+  useEffect(() => {
+    let successTimer;
+    if (isComplete) {
+      console.log(
+        "Puzzle completed successfully! Showing success animation after delay..."
+      );
+
+      // Add a 1.5 second delay before showing the success overlay
+      successTimer = setTimeout(() => {
+        setShowSuccess(true);
+      }, 1500); // 1.5 seconds delay
+    }
+
+    // Clean up timer if component unmounts or isComplete changes
+    return () => {
+      if (successTimer) clearTimeout(successTimer);
+    };
+  }, [isComplete]);
+  
   // Add effect to detect and handle game completion
   useEffect(() => {
     if (isComplete) {

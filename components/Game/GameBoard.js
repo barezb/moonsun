@@ -77,7 +77,7 @@ const GameBoard = ({
 
   return (
     <motion.div
-      className="game-board"
+      className={`game-board ${isComplete ? "solved" : ""}`}
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.4 }}

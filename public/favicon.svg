@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Background -->
+  <rect width="512" height="512" rx="80" ry="80" fill="#f8f8f8" />
+  
+  <!-- Bottom Right Sun -->
+  <circle cx="350" cy="350" r="100" fill="#FFD700" stroke="#E08E27" stroke-width="10" />
+  
+  <!-- Top Left Moon -->
+  <path d="M180,100c-12-4-40-5-65,15c-30,25-35,75-25,110c15,40,55,70,105,70c30,0,50-5,65-15c-25,30-70,50-120,50c-80,0-140-65-140-140c0-75,65-140,140-140c45,0,85,20,110,50C225,100,200,105,180,100z" fill="#6F9ED8" stroke="#5E8DC5" stroke-width="10" />
+  
+  <!-- Grid pattern overlay -->
+  <path d="M512,256H0 M256,0V512" stroke="#E8E8E8" stroke-width="2" opacity="0.5" />
+  
+  <!-- Corner accent -->
+  <circle cx="60" cy="60" r="15" fill="#E8E8E8" />
+  <circle cx="452" cy="452" r="15" fill="#E8E8E8" />
+  <circle cx="452" cy="60" r="8" fill="#E8E8E8" />
+  <circle cx="60" cy="452" r="8" fill="#E8E8E8" />
+</svg>

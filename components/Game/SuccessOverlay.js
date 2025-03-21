@@ -1,4 +1,4 @@
-// components/Game/SuccessOverlay.js - New component for success message
+// components/Game/SuccessOverlay.js
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -13,6 +13,7 @@ const SuccessOverlay = ({ isVisible, onClose, onNewGame }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
           onClick={onClose}
         >
           <motion.div
@@ -23,20 +24,39 @@ const SuccessOverlay = ({ isVisible, onClose, onNewGame }) => {
               type: "spring",
               stiffness: 300,
               damping: 25,
+              delay: 0.2, // Add a slight delay for the content appearance
             }}
             onClick={(e) => e.stopPropagation()}
           >
-            <h2>Puzzle Solved!</h2>
-            <p>Congratulations! You've successfully solved the puzzle.</p>
+            <motion.h2
+              initial={{ y: -20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4 }}
+            >
+              Puzzle Solved!
+            </motion.h2>
 
-            <div className="success-buttons">
+            <motion.p
+              initial={{ y: -10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.6 }}
+            >
+              Congratulations! You've successfully solved the puzzle.
+            </motion.p>
+
+            <motion.div
+              className="success-buttons"
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.8 }}
+            >
               <button className="success-button primary" onClick={onNewGame}>
                 New Game
               </button>
               <button className="success-button secondary" onClick={onClose}>
                 Continue
               </button>
-            </div>
+            </motion.div>
           </motion.div>
         </motion.div>
       )}

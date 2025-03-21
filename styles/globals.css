@@ -521,7 +521,7 @@ button {
     margin-bottom: 0.3rem;
   }
 }
-.success-overlay {
+..success-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -545,7 +545,7 @@ button {
 }
 
 .success-content h2 {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   color: var(--success-color);
   margin-bottom: 1rem;
 }
@@ -553,6 +553,7 @@ button {
 .success-content p {
   margin-bottom: 1.5rem;
   color: var(--primary-color);
+  font-size: 1.1rem;
 }
 
 .success-buttons {
@@ -566,6 +567,11 @@ button {
   border-radius: 0.5rem;
   font-weight: 500;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.success-button:hover {
+  transform: translateY(-2px);
 }
 
 .success-button.primary {
@@ -576,4 +582,15 @@ button {
 .success-button.secondary {
   background-color: var(--button-bg);
   color: var(--primary-color);
+}
+
+/* Add a pulsing animation for the board when solved */
+@keyframes solvePulse {
+  0% { box-shadow: 0 0 0 0 rgba(104, 192, 124, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(104, 192, 124, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(104, 192, 124, 0); }
+}
+
+.game-board.solved {
+  animation: solvePulse 2s ease-out;
 }
